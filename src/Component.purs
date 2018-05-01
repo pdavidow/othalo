@@ -6,7 +6,11 @@ import Data.Maybe (Maybe(..))
 
 import Halogen as H
 import Halogen.HTML as HH
+import Halogen.HTML (ClassName(..))
 import Halogen.HTML.Events as HE
+import Halogen.HTML.Properties as HP
+--import Halogen.Themes.Tachyons as TCH
+
 
 data Query a = ToggleState a
 
@@ -33,7 +37,9 @@ component =
       , HH.p_
           [ HH.text "Why not toggle this button:" ]
       , HH.button
-          [ HE.onClick (HE.input_ ToggleState) ]
+          [ HE.onClick (HE.input_ ToggleState)
+          , HP.classes [ ClassName "orange" ]
+          ]
           [ HH.text
               if not state.on
               then "Don't push me"
