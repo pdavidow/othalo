@@ -5,7 +5,7 @@ import Control.Monad.Eff (Eff)
 import Halogen.Aff as HA
 import Halogen.VDom.Driver (runUI)
 
-import Component (component)
+import SimpleComponent (component) 
 
 main :: Eff (HA.HalogenEffects ()) Unit
 main = HA.runHalogenAff do
